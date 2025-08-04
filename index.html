@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">AdminPanel</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Reports</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Header -->
+      <header class="header">
+        <h1>Dashboard</h1>
+        <div class="theme-toggle">
+          <label>
+            <input type="checkbox" id="themeSwitch" />
+            <span>🌞 / 🌜</span>
+          </label>
+        </div>
+      </header>
+
+      <!-- Widgets / Grid Area -->
+      <section class="cards">
+        <div class="card">Users<br><strong>1,234</strong></div>
+        <div class="card">Sales<br><strong>$12,345</strong></div>
+        <div class="card">Performance<br><strong>89%</strong></div>
+        <div class="card">Tasks<br><strong>76</strong></div>
+      </section>
+
+      <!-- Additional Panels -->
+      <section class="panels">
+        <div class="panel">
+          <h3>Recent Activity</h3>
+          <p>No recent activity.</p>
+        </div>
+        <div class="panel">
+          <h3>Notifications</h3>
+          <p>You have 3 new messages.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const themeSwitch = document.getElementById("themeSwitch");
+    const root = document.documentElement;
+
+    themeSwitch.addEventListener("change", () => {
+      root.setAttribute("data-theme", themeSwitch.checked ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>
